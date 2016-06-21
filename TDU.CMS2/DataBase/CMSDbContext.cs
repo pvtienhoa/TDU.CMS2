@@ -10,7 +10,7 @@ using TDU.CMS2.DataModels;
 
 namespace TDU.CMS2.DataBase
 {
-    public class CMSDbContext : System.Data.Entity.DbContext
+    public partial class CMSDbContext : System.Data.Entity.DbContext
     {
         //public CMSDbContext() : base(CreateConnection(), true) { } 
         public CMSDbContext() : base("TDUCMSConnectionString") { }

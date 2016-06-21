@@ -41,11 +41,9 @@ namespace TDU.CMS2.DataModels
         [Display(Name = "Card Holder", ShortName = "CardHol")]
         public string CardHolder { get; set; }
 
-        [StringLength(9)]
+        [StringLength(10)]
         [Display(Name = "Cif No", ShortName = "Cif")]
-        public string Cif { get; set; }
-
-        [EnumDataType(typeof(RequestType))]
+        public string Cif { get; set; }[EnumDataType(typeof(RequestType))]
         [Display(Name = "Request Type", ShortName = "ReqType")]
         public RequestType Type { get; set; }
 
