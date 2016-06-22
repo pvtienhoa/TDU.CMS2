@@ -26,7 +26,7 @@ namespace TDU.CMS2.Views
     public partial class CardRequestListView : DevExpress.XtraEditors.XtraUserControl
     {
         public List<CardRequest> CardRequests { get; private set; }
-        public CardRequestListViewMode Mode { get; private set; }
+        public CardRequestListViewMode Mode { get; set; }
         public CMSDbContext DbContext { get; private set; }
 
         public CardRequestListView()
@@ -52,7 +52,7 @@ namespace TDU.CMS2.Views
             InitBindings();
         }
 
-        private void InitBindings()
+        public void InitBindings()
         {
             DbContext = new CMSDbContext();
             LoadRequestsToList(Mode);

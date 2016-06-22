@@ -7,26 +7,21 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
+using DevExpress.XtraBars;
+using TDU.CMS2.Modules;
 
 namespace TDU.CMS2
 {
-    public partial class MainForm : DevExpress.XtraEditors.XtraForm
+    public partial class MainForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public MainForm()
         {
             InitializeComponent();
-            InitBindings();
         }
 
-        private void InitBindings()
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //MessageBox.Show( System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last().ToString());
-            var f = new Form1 {TopLevel = false, Dock = DockStyle.Fill};
-            this.IsMdiContainer = true;
-            documentManager1.MdiParent = this;
-            tabbedView1.AddDocument(f);
-            //throw new NotImplementedException();
+            var c = new DevideSend();tabbedView1.AddDocument(c);
         }
     }
 }

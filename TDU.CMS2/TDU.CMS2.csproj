@@ -108,6 +108,12 @@
       <DependentUpon>201606211730543_updatecif.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modules\DevideSend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\DevideSend.Designer.cs">
+      <DependentUpon>DevideSend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\CardRequestListView.cs">
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606211730543_updatecif.resx">
       <DependentUpon>201606211730543_updatecif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\DevideSend.resx">
+      <DependentUpon>DevideSend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
