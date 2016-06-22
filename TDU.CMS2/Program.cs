@@ -21,7 +21,7 @@ namespace TDU.CMS2
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

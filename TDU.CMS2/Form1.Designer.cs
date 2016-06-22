@@ -45,6 +45,9 @@
             this.Form1layoutControl1ConvertedLayout = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cardRequestBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCardHolder = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -57,8 +60,6 @@
             this.colEmployeeName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDescription = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardRequestsBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardRequestsBindingSource)).BeginInit();
@@ -68,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardRequestBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -140,36 +142,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1033, 49);
+            this.barDockControlTop.Size = new System.Drawing.Size(766, 49);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 748);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1033, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 394);
+            this.barDockControlBottom.Size = new System.Drawing.Size(766, 23);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 49);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 699);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 345);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1033, 49);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 699);
-            // 
-            // cardRequestsBindingSource1
-            // 
-            this.cardRequestsBindingSource1.DataSource = typeof(TDU.CMS2.DataModels.CardRequest);
-            // 
-            // cardRequestsBindingSource
-            // 
-            this.cardRequestsBindingSource.DataSource = typeof(TDU.CMS2.DataModels.CardRequest);
+            this.barDockControlRight.Location = new System.Drawing.Point(766, 49);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 345);
             // 
             // openFileDialog1
             // 
@@ -183,19 +177,18 @@
             this.Form1layoutControl1ConvertedLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Form1layoutControl1ConvertedLayout.Location = new System.Drawing.Point(0, 49);
             this.Form1layoutControl1ConvertedLayout.Name = "Form1layoutControl1ConvertedLayout";
-            this.Form1layoutControl1ConvertedLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(55, 250, 250, 350);
             this.Form1layoutControl1ConvertedLayout.Root = this.layoutControlGroup1;
-            this.Form1layoutControl1ConvertedLayout.Size = new System.Drawing.Size(1033, 699);
+            this.Form1layoutControl1ConvertedLayout.Size = new System.Drawing.Size(766, 345);
             this.Form1layoutControl1ConvertedLayout.TabIndex = 4;
             // 
             // gridControl1
             // 
-            this.gridControl1.DataSource = this.cardRequestsBindingSource1;
-            this.gridControl1.Location = new System.Drawing.Point(2, 2);
+            this.gridControl1.DataSource = this.cardRequestBindingSource;
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1029, 695);
+            this.gridControl1.Size = new System.Drawing.Size(742, 321);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -218,6 +211,30 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsDetail.DetailMode = DevExpress.XtraGrid.Views.Grid.DetailMode.Default;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(766, 345);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(746, 325);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // cardRequestBindingSource
+            // 
+            this.cardRequestBindingSource.DataSource = typeof(TDU.CMS2.DataModels.CardRequest);
             // 
             // colID
             // 
@@ -303,32 +320,11 @@
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 11;
             // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "Root";
-            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup1.Size = new System.Drawing.Size(1033, 699);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1033, 699);
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 771);
+            this.ClientSize = new System.Drawing.Size(766, 417);
             this.Controls.Add(this.Form1layoutControl1ConvertedLayout);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -336,6 +332,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardRequestsBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cardRequestsBindingSource)).EndInit();
@@ -345,6 +342,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardRequestBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -369,6 +367,8 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private System.Windows.Forms.BindingSource cardRequestBindingSource;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colCardNumber;
         private DevExpress.XtraGrid.Columns.GridColumn colCardHolder;
@@ -381,7 +381,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEmployeeName;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }
 

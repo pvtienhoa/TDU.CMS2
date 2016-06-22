@@ -15,7 +15,7 @@ using TDU.CMS2.DataModels;
 
 namespace TDU.CMS2
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class Form1 : System.Windows.Forms.Form
     {
         private CMSDbContext dbContext;
         private List<CardRequest> cList;
@@ -80,6 +80,11 @@ namespace TDU.CMS2
                 //cardRequestsBindingSource1.DataSource = dbContext.CardRequests.Local.Where(d => dbContext.Entry(d).State == EntityState.Added).ToList();}
                 cardRequestsBindingSource1.DataSource = cList;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
