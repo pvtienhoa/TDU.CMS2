@@ -130,6 +130,10 @@
     <Compile Include="Migrations\201606230721480_ModifyUser.Designer.cs">
       <DependentUpon>201606230721480_ModifyUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606231729489_CR_ChangeLocationToLong.cs" />
+    <Compile Include="Migrations\201606231729489_CR_ChangeLocationToLong.Designer.cs">
+      <DependentUpon>201606231729489_CR_ChangeLocationToLong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modules\DataFileHandler.cs" />
     <Compile Include="Modules\DevideSend.cs">
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606230721480_ModifyUser.resx">
       <DependentUpon>201606230721480_ModifyUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606231729489_CR_ChangeLocationToLong.resx">
+      <DependentUpon>201606231729489_CR_ChangeLocationToLong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DevideSend.resx">
       <DependentUpon>DevideSend.cs</DependentUpon>

@@ -29,14 +29,12 @@ namespace TDU.CMS2.DataModels
     }
 
     public class CardRequest
-    {
-        [Key, Display(AutoGenerateField = true)]
+    {[Key,Display(AutoGenerateField = true)]
         public long ID { get; set; }
 
         [StringLength(30, MinimumLength = 4)]
         [Display(Name = "Card Number", ShortName = "CardNo")]
         public string CardNumber { get; set; }
-
         [StringLength(30, MinimumLength = 4)]
         [Display(Name = "Card Holder", ShortName = "CardHol")]
         public string CardHolder { get; set; }
@@ -52,10 +50,10 @@ namespace TDU.CMS2.DataModels
         public DateTime RequestDate { get; set; }
 
         [Display(Name = "Card Location", ShortName = "CardLoc")]
-        public int CardLocation { get; set; }
+        public long CardLocation { get; set; }
 
         [Display(Name = "Pin Location", ShortName = "PinLoc")]
-        public int PinLocation { get; set; }
+        public long PinLocation { get; set; }
 
         [EnumDataType(typeof(RequestState))]
         [Display(Name = "State")]

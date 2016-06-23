@@ -42,9 +42,7 @@ namespace TDU.CMS2
         {
             using (var dbContext = new CMSDbContext())
             {
-                CurrentUser = dbContext.Users.FirstOrDefault(u => u.UserName.Equals(currentUserName));
-
-                if (CurrentUser == null)
+                CurrentUser = dbContext.Users.FirstOrDefault(u => u.UserName.Equals(currentUserName));if (CurrentUser == null)
                     return false;
                 UserNameBarItem.Caption = "User Name: " + CurrentUser.EmployeeName;
                 DepartmentBarItem.Caption = "Department: " + CurrentUser.Department.Name;
@@ -54,8 +52,7 @@ namespace TDU.CMS2
 
         private void ImportBarItem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var c = new ImportForm ();
-            c.CurrentUser = CurrentUser;
+            var c = new ImportForm (CurrentUser);
             tabbedView1.AddDocument(c);
         }
     }

@@ -23,6 +23,9 @@ namespace TDU.CMS2.DataBase
         .Where(p => p.State == EntityState.Modified).ToList();
             var now = DateTime.UtcNow;
 
+            var currentUserName = System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last();
+            var currentUser = Users.FirstOrDefault(u => u.UserName.Equals(currentUserName));
+
             foreach (var change in modifiedEntities)
             {
                 var entityName = change.Entity.GetType().Name;
@@ -42,7 +45,7 @@ namespace TDU.CMS2.DataBase
                             OldValue = originalValue,
                             NewValue = currentValue,
                             DateChanged = now,
-                            UserName = Users.FirstOrDefault(u=>u.UserName == System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\').Last())?.ToString()
+                            UserName = currentUser?.EmployeeName
                         };
                         ChangeLogs.Add(log);
                     }

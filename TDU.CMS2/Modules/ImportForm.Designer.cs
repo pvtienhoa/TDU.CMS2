@@ -30,18 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImportForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.ImportButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.IssueButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.ReIssueButtonItem = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.FileFunctionPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.RequestTypePageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.BasicFunctionPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rbiImport = new DevExpress.XtraBars.BarButtonItem();
+            this.rbiIssue = new DevExpress.XtraBars.BarButtonItem();
+            this.rbiReIssue = new DevExpress.XtraBars.BarButtonItem();
+            this.rbiSave = new DevExpress.XtraBars.BarButtonItem();
+            this.rbiClose = new DevExpress.XtraBars.BarButtonItem();
+            this.rpiHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rpgDataFile = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgRequestType = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.rpgBasicFunction = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.cardRequestListView1 = new TDU.CMS2.Views.CardRequestListView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,108 +51,116 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
-            this.ImportButtonItem,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.IssueButtonItem,
-            this.ReIssueButtonItem});
+            this.rbiImport,
+            this.rbiIssue,
+            this.rbiReIssue,
+            this.rbiSave,
+            this.rbiClose});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 6;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(982, 141);
+            this.rpiHome});
+            this.ribbonControl1.Size = new System.Drawing.Size(929, 141);
             this.ribbonControl1.StatusBar = this.ribbonStatusBar1;
             // 
-            // ImportButtonItem
+            // rbiImport
             // 
-            this.ImportButtonItem.Caption = "From Excel";
-            this.ImportButtonItem.Glyph = ((System.Drawing.Image)(resources.GetObject("ImportButtonItem.Glyph")));
-            this.ImportButtonItem.Id = 1;
-            this.ImportButtonItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("ImportButtonItem.LargeGlyph")));
-            this.ImportButtonItem.Name = "ImportButtonItem";
-            this.ImportButtonItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.ImportButtonItem_ItemClick);
+            this.rbiImport.Caption = "From File";
+            this.rbiImport.Glyph = ((System.Drawing.Image)(resources.GetObject("rbiImport.Glyph")));
+            this.rbiImport.Id = 1;
+            this.rbiImport.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("rbiImport.LargeGlyph")));
+            this.rbiImport.Name = "rbiImport";
+            this.rbiImport.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.rbiImport_ItemClick);
             // 
-            // barButtonItem2
+            // rbiIssue
             // 
-            this.barButtonItem2.Caption = "Save";
-            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.LargeGlyph")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.rbiIssue.Caption = "Issue";
+            this.rbiIssue.Glyph = ((System.Drawing.Image)(resources.GetObject("rbiIssue.Glyph")));
+            this.rbiIssue.Id = 2;
+            this.rbiIssue.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("rbiIssue.LargeGlyph")));
+            this.rbiIssue.Name = "rbiIssue";
+            this.rbiIssue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.rbiIssue_ItemClick);
             // 
-            // barButtonItem3
+            // rbiReIssue
             // 
-            this.barButtonItem3.Caption = "Close";
-            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
-            this.barButtonItem3.Id = 3;
-            this.barButtonItem3.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.LargeGlyph")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.rbiReIssue.Caption = "Re-Issue";
+            this.rbiReIssue.Glyph = ((System.Drawing.Image)(resources.GetObject("rbiReIssue.Glyph")));
+            this.rbiReIssue.Id = 3;
+            this.rbiReIssue.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("rbiReIssue.LargeGlyph")));
+            this.rbiReIssue.Name = "rbiReIssue";
+            this.rbiReIssue.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.rbiReIssue_ItemClick);
             // 
-            // IssueButtonItem
+            // rbiSave
             // 
-            this.IssueButtonItem.Caption = "Issue";
-            this.IssueButtonItem.Glyph = ((System.Drawing.Image)(resources.GetObject("IssueButtonItem.Glyph")));
-            this.IssueButtonItem.Id = 4;
-            this.IssueButtonItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("IssueButtonItem.LargeGlyph")));
-            this.IssueButtonItem.Name = "IssueButtonItem";
+            this.rbiSave.Caption = "Save";
+            this.rbiSave.Glyph = ((System.Drawing.Image)(resources.GetObject("rbiSave.Glyph")));
+            this.rbiSave.Id = 4;
+            this.rbiSave.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("rbiSave.LargeGlyph")));
+            this.rbiSave.Name = "rbiSave";
+            this.rbiSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.rbiSave_ItemClick);
             // 
-            // ReIssueButtonItem
+            // rbiClose
             // 
-            this.ReIssueButtonItem.Caption = "Re-Issue";
-            this.ReIssueButtonItem.Glyph = ((System.Drawing.Image)(resources.GetObject("ReIssueButtonItem.Glyph")));
-            this.ReIssueButtonItem.Id = 5;
-            this.ReIssueButtonItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("ReIssueButtonItem.LargeGlyph")));
-            this.ReIssueButtonItem.Name = "ReIssueButtonItem";
+            this.rbiClose.Caption = "Close";
+            this.rbiClose.Glyph = ((System.Drawing.Image)(resources.GetObject("rbiClose.Glyph")));
+            this.rbiClose.Id = 5;
+            this.rbiClose.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("rbiClose.LargeGlyph")));
+            this.rbiClose.Name = "rbiClose";
             // 
-            // ribbonPage1
+            // rpiHome
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.FileFunctionPageGroup,
-            this.RequestTypePageGroup,
-            this.BasicFunctionPageGroup});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "Home";
+            this.rpiHome.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpgDataFile,
+            this.rpgRequestType,
+            this.rpgBasicFunction});
+            this.rpiHome.Name = "rpiHome";
+            this.rpiHome.Text = "Home";
             // 
-            // FileFunctionPageGroup
+            // rpgDataFile
             // 
-            this.FileFunctionPageGroup.ItemLinks.Add(this.ImportButtonItem);
-            this.FileFunctionPageGroup.Name = "FileFunctionPageGroup";
-            this.FileFunctionPageGroup.Text = "Batch Import";
+            this.rpgDataFile.ItemLinks.Add(this.rbiImport);
+            this.rpgDataFile.Name = "rpgDataFile";
+            this.rpgDataFile.Text = "Data File";
             // 
-            // RequestTypePageGroup
+            // rpgRequestType
             // 
-            this.RequestTypePageGroup.ItemLinks.Add(this.IssueButtonItem);
-            this.RequestTypePageGroup.ItemLinks.Add(this.ReIssueButtonItem);
-            this.RequestTypePageGroup.Name = "RequestTypePageGroup";
-            this.RequestTypePageGroup.Text = "Request Type";
+            this.rpgRequestType.ItemLinks.Add(this.rbiIssue);
+            this.rpgRequestType.ItemLinks.Add(this.rbiReIssue);
+            this.rpgRequestType.Name = "rpgRequestType";
+            this.rpgRequestType.Text = "Request Type";
             // 
-            // BasicFunctionPageGroup
+            // rpgBasicFunction
             // 
-            this.BasicFunctionPageGroup.ItemLinks.Add(this.barButtonItem2);
-            this.BasicFunctionPageGroup.ItemLinks.Add(this.barButtonItem3);
-            this.BasicFunctionPageGroup.Name = "BasicFunctionPageGroup";
-            this.BasicFunctionPageGroup.Text = "Basic";
+            this.rpgBasicFunction.ItemLinks.Add(this.rbiSave);
+            this.rpgBasicFunction.ItemLinks.Add(this.rbiClose);
+            this.rpgBasicFunction.Name = "rpgBasicFunction";
+            this.rpgBasicFunction.Text = "Basic Function";
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 676);
+            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 670);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(982, 27);
+            this.ribbonStatusBar1.Size = new System.Drawing.Size(929, 27);
             // 
             // cardRequestListView1
             // 
+            this.cardRequestListView1.CurrentUser = null;
             this.cardRequestListView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cardRequestListView1.Location = new System.Drawing.Point(0, 141);
             this.cardRequestListView1.Mode = TDU.CMS2.Views.CardRequestListViewMode.Import;
             this.cardRequestListView1.Name = "cardRequestListView1";
-            this.cardRequestListView1.Size = new System.Drawing.Size(982, 535);
+            this.cardRequestListView1.Size = new System.Drawing.Size(929, 529);
             this.cardRequestListView1.TabIndex = 2;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
             // 
             // ImportForm
             // 
@@ -161,7 +170,7 @@
             this.Controls.Add(this.ribbonStatusBar1);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "ImportForm";
-            this.Size = new System.Drawing.Size(982, 703);
+            this.Size = new System.Drawing.Size(929, 697);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,17 +180,18 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup FileFunctionPageGroup;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup BasicFunctionPageGroup;
+        private DevExpress.XtraBars.Ribbon.RibbonPage rpiHome;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgDataFile;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
         private Views.CardRequestListView cardRequestListView1;
-        private DevExpress.XtraBars.BarButtonItem ImportButtonItem;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem IssueButtonItem;
-        private DevExpress.XtraBars.BarButtonItem ReIssueButtonItem;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup RequestTypePageGroup;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgRequestType;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgBasicFunction;
+        private DevExpress.XtraBars.BarButtonItem rbiImport;
+        private DevExpress.XtraBars.BarButtonItem rbiIssue;
+        private DevExpress.XtraBars.BarButtonItem rbiReIssue;
+        private DevExpress.XtraBars.BarButtonItem rbiSave;
+        private DevExpress.XtraBars.BarButtonItem rbiClose;
     }
 }
