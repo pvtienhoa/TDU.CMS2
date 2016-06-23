@@ -87,6 +87,9 @@
     <Compile Include="DataBase\CMSDbContext.cs" />
     <Compile Include="DataBase\CMSDbContextExtra.cs" />
     <Compile Include="DataModels\CardRequest.cs" />
+    <Compile Include="DataModels\ChangeLog.cs" />
+    <Compile Include="DataModels\Department.cs" />
+    <Compile Include="DataModels\User.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,12 +110,45 @@
     <Compile Include="Migrations\201606211730543_updatecif.Designer.cs">
       <DependentUpon>201606211730543_updatecif.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606230306028_AddChangeLog.cs" />
+    <Compile Include="Migrations\201606230306028_AddChangeLog.Designer.cs">
+      <DependentUpon>201606230306028_AddChangeLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606230311000_ModifyChangeLog_keyvaluetostringtype.cs" />
+    <Compile Include="Migrations\201606230311000_ModifyChangeLog_keyvaluetostringtype.Designer.cs">
+      <DependentUpon>201606230311000_ModifyChangeLog_keyvaluetostringtype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606230336047_AddUserAndDept.cs" />
+    <Compile Include="Migrations\201606230336047_AddUserAndDept.Designer.cs">
+      <DependentUpon>201606230336047_AddUserAndDept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606230652448_UpdateDepartmentTable.cs" />
+    <Compile Include="Migrations\201606230652448_UpdateDepartmentTable.Designer.cs">
+      <DependentUpon>201606230652448_UpdateDepartmentTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606230721480_ModifyUser.cs" />
+    <Compile Include="Migrations\201606230721480_ModifyUser.Designer.cs">
+      <DependentUpon>201606230721480_ModifyUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modules\DataFileHandler.cs" />
     <Compile Include="Modules\DevideSend.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Modules\DevideSend.Designer.cs">
       <DependentUpon>DevideSend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ImportForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ImportForm.Designer.cs">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReceiveForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ReceiveForm.Designer.cs">
+      <DependentUpon>ReceiveForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -134,8 +170,29 @@
     <EmbeddedResource Include="Migrations\201606211730543_updatecif.resx">
       <DependentUpon>201606211730543_updatecif.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606230306028_AddChangeLog.resx">
+      <DependentUpon>201606230306028_AddChangeLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606230311000_ModifyChangeLog_keyvaluetostringtype.resx">
+      <DependentUpon>201606230311000_ModifyChangeLog_keyvaluetostringtype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606230336047_AddUserAndDept.resx">
+      <DependentUpon>201606230336047_AddUserAndDept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606230652448_UpdateDepartmentTable.resx">
+      <DependentUpon>201606230652448_UpdateDepartmentTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606230721480_ModifyUser.resx">
+      <DependentUpon>201606230721480_ModifyUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modules\DevideSend.resx">
       <DependentUpon>DevideSend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ImportForm.resx">
+      <DependentUpon>ImportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ReceiveForm.resx">
+      <DependentUpon>ReceiveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

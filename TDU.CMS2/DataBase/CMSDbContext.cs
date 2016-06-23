@@ -18,6 +18,9 @@ namespace TDU.CMS2.DataBase
         public CMSDbContext(DbConnection dbConnection) : base(dbConnection, true) { }
         
         public DbSet<CardRequest> CardRequests { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<ChangeLog> ChangeLogs { get; set; }
 
         static DbConnection CreateConnection()
         {
@@ -32,7 +35,6 @@ namespace TDU.CMS2.DataBase
             };
             connection.ConnectionString = connectionStringBuilder.ConnectionString;
             //MessageBox.Show(connection.ConnectionString);
-            return connection;
-        }
+            return connection;}
     }
 }

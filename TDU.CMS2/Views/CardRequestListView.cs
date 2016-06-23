@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using TDU.CMS2.DataBase;
 using TDU.CMS2.DataModels;
 using System.Data.Entity;
+using TDU.CMS2.Modules;
 
 namespace TDU.CMS2.Views
 {
@@ -28,7 +29,8 @@ namespace TDU.CMS2.Views
         public List<CardRequest> CardRequests { get; private set; }
         public CardRequestListViewMode Mode { get; set; }
         public CMSDbContext DbContext { get; private set; }
-
+        public User CurrentUser { get; set; }
+        
         public CardRequestListView()
         {
             InitializeComponent();
@@ -43,12 +45,9 @@ namespace TDU.CMS2.Views
     //        }, System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-        public CardRequestListView(CardRequestListViewMode mode)
+        public void Start(CardRequestListViewMode mode)
         {
-            InitializeComponent();
-
             Mode = mode;
-
             InitBindings();
         }
 
@@ -65,13 +64,17 @@ namespace TDU.CMS2.Views
             switch (mode)
             {
                 case CardRequestListViewMode.Import:
-                    throw new NotImplementedException();
-                    //break;
+                    CardRequests = new List<CardRequest>();
+                    //throw new NotImplementedException();
+                    break;
                 case CardRequestListViewMode.Devide:
                     throw new NotImplementedException();
                 //break;
                 case CardRequestListViewMode.Receive:
-                    CardRequests = DbContext.CardRequests.Where(cr => cr.State == RequestState.Producing).ToList();
+                    var requests = from r in DbContext.CardRequests
+                        where r.State.Equals(RequestState.Producing)
+                        select r;
+                    CardRequests = requests.ToList();
                     break;
                     //throw new NotImplementedException();
                 //break;
@@ -83,6 +86,30 @@ namespace TDU.CMS2.Views
                     throw new NotImplementedException();
                     //break;
             }
+        }
+
+        public void LoadRequestsFromFile(string filePath)
+        {
+            CardRequests =  DataFileHandler.ReadEssemcardFile(filePath);
+            foreach (var cardRequest in CardRequests)
+            {
+                cardRequest.PinLocation = 0;
+                cardRequest.CardLocation = 0;
+                cardRequest.EmployeeName = CurrentUser.EmployeeName;
+                cardRequest.State = RequestState.Producing;
+                cardRequest.Type = RequestType.Issue;
+            }
+            Reload();
+        }
+
+        public void Reload()
+        {
+            cardRequestsBindingSource.DataSource = CardRequests;
+        }
+
+        public void RefreshData()
+        {
+            gridView1.RefreshData();
         }
     }
 }

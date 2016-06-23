@@ -8,18 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using TDU.CMS2.Views;
 
 namespace TDU.CMS2.Modules
 {
-    public partial class DevideSend : DevExpress.XtraEditors.XtraUserControl
+    public partial class ReceiveForm : DevExpress.XtraEditors.XtraUserControl
     {
-        public DevideSend()
+        public ReceiveForm()
         {
             InitializeComponent();
-
-            cardRequestListView1.Mode = CardRequestListViewMode.Devide;
-            cardRequestListView1.InitBindings();
         }
     }
 }
