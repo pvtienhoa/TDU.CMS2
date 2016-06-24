@@ -21,6 +21,9 @@ namespace TDU.CMS2.DataBase
         public DbSet<User> Users { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<ChangeLog> ChangeLogs { get; set; }
+        public DbSet<CardType> CardTypes { get; set; }
+        public DbSet<CardInfo> CardInfos { get; set; }
+
 
         static DbConnection CreateConnection()
         {

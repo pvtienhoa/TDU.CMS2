@@ -86,7 +86,9 @@
   <ItemGroup>
     <Compile Include="DataBase\CMSDbContext.cs" />
     <Compile Include="DataBase\CMSDbContextExtra.cs" />
+    <Compile Include="DataModels\CardInfo.cs" />
     <Compile Include="DataModels\CardRequest.cs" />
+    <Compile Include="DataModels\CardType.cs" />
     <Compile Include="DataModels\ChangeLog.cs" />
     <Compile Include="DataModels\Department.cs" />
     <Compile Include="DataModels\User.cs" />
@@ -133,6 +135,14 @@
     <Compile Include="Migrations\201606231729489_CR_ChangeLocationToLong.cs" />
     <Compile Include="Migrations\201606231729489_CR_ChangeLocationToLong.Designer.cs">
       <DependentUpon>201606231729489_CR_ChangeLocationToLong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606240347373_updateCardRequest_AddForeinKey.cs" />
+    <Compile Include="Migrations\201606240347373_updateCardRequest_AddForeinKey.Designer.cs">
+      <DependentUpon>201606240347373_updateCardRequest_AddForeinKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606241118497_updateCard.cs" />
+    <Compile Include="Migrations\201606241118497_updateCard.Designer.cs">
+      <DependentUpon>201606241118497_updateCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modules\DataFileHandler.cs" />
@@ -191,6 +201,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606231729489_CR_ChangeLocationToLong.resx">
       <DependentUpon>201606231729489_CR_ChangeLocationToLong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240347373_updateCardRequest_AddForeinKey.resx">
+      <DependentUpon>201606240347373_updateCardRequest_AddForeinKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606241118497_updateCard.resx">
+      <DependentUpon>201606241118497_updateCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\DevideSend.resx">
       <DependentUpon>DevideSend.cs</DependentUpon>

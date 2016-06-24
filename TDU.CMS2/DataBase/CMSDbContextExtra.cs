@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Text;
@@ -70,6 +71,22 @@ namespace TDU.CMS2.DataBase
                 // Throw a new DbEntityValidationException with the improved exception message.
                 throw new DbEntityValidationException(exceptionMessage, ex.EntityValidationErrors);
             }
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<CardRequest>()
+                .HasRequired(d => d.CardDepartment)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<CardRequest>()
+                .HasRequired(d => d.PinDepartment)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<CardRequest>().HasRequired(d => d.DevideDepartment)
+                .WithMany()
+                .WillCascadeOnDelete(false);
+            //modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
         }
     }
 }

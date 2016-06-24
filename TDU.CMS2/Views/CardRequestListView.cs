@@ -132,19 +132,69 @@ namespace TDU.CMS2.Views
 
         public void SetAllRequestToType(RequestType type)
         {
-            var selectedRowHandled = gridView1.GetSelectedRows();
             if (CardRequests == null)
             {
                 return;
             }
-            foreach (var i in selectedRowHandled)
-            {
-                gridView1.SetRowCellValue(i,"Type",type);
-            }
+            SetSelectedRowCellValue("Type", type);
             //foreach (var request in CardRequests)
             //{
             //    request.Type = type;
             //}
             //Reload();
-        }}
+        }
+
+        public void FilterByDate(DateTime filterDate)
+        {
+            CardRequests = DbContext.CardRequests.Where(request => request.RequestDate.Date.Equals(filterDate.Date)).ToList();
+            Reload();
+        }
+
+        public void SendCard(bool cardSend, bool pinSend)
+        {
+            var rowHandlesToCheck = gridView1.GetSelectedRows();
+            foreach (var i in rowHandlesToCheck)
+            {
+                if (gridView1.GetRowCellValue(i, "DevideValue") == null)
+                {
+                    gridView1.UnselectRow(i);
+                }
+            }
+            if (cardSend)
+            {
+                SetSelectedRowCellValue("CardLocation","DevideValue");
+            }
+            if (pinSend)
+            {
+                SetSelectedRowCellValue("PinLocation", "DevideValue");
+            }
+            foreach(var i in rowHandlesToCheck)
+            {
+                //var pinLoc = gridView1.GetRowCellValue(i, "Pinlocation");
+                //var cardLoc = gridView1.GetRowCellValue(i, "Cardlocation");
+                //if (pinSend)
+                //{
+                    
+                //}
+            }
+        }
+
+        private void SetSelectedRowCellValue(string fieldName, object value)
+        {
+            var selectedRowHandles = gridView1.GetSelectedRows();
+            foreach (var i in selectedRowHandles)
+            {
+                gridView1.SetRowCellValue(i, fieldName, value);
+            }
+        }
+
+        private void SetSelectedRowCellValue(string fieldName, string fieldNameToCopy)
+        {
+            var selectedRowHandles = gridView1.GetSelectedRows();
+            foreach (var i in selectedRowHandles)
+            {
+                gridView1.SetRowCellValue(i, fieldName, gridView1.GetRowCellValue(i, fieldNameToCopy));
+            }
+        }
+    }
 }
