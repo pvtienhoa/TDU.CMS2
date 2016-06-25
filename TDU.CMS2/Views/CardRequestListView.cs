@@ -44,7 +44,6 @@ namespace TDU.CMS2.Views
             //// Bind data to control when loading complete
             //cardRequestsBindingSource.DataSource = dbContext.CardRequests.Local.ToBindingList();
             //        }, System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext());
-            
         }
 
         public void Start(CardRequestListViewMode mode)
@@ -74,11 +73,14 @@ namespace TDU.CMS2.Views
                 //break;
                 case CardRequestListViewMode.Receive:
                     var requests = from r in DbContext.CardRequests
-                        where r.State.Equals(RequestState.Producing) || (r.State.Equals(RequestState.Devided)&&(r.CardLocation.Equals(CurrentUser.DeptID)|| r.PinLocation.Equals(CurrentUser.DeptID)))
+                        where
+                            r.State.Equals(RequestState.Producing) ||
+                            (r.State.Equals(RequestState.Devided) &&
+                             (r.CardLocation.Equals(CurrentUser.DeptID) || r.PinLocation.Equals(CurrentUser.DeptID)))
                         select r;
                     CardRequests = requests.ToList();
                     break;
-                    //throw new NotImplementedException();
+                //throw new NotImplementedException();
                 //break;
                 case CardRequestListViewMode.Destroy:
                     throw new NotImplementedException();
@@ -86,13 +88,13 @@ namespace TDU.CMS2.Views
 
                 default:
                     throw new NotImplementedException();
-                    //break;
+                //break;
             }
         }
 
         public void LoadRequestsFromFile(string filePath)
         {
-            CardRequests =  DataFileHandler.ReadEssemcardFile(filePath);
+            CardRequests = DataFileHandler.ReadEssemcardFile(filePath);
             foreach (var cardRequest in CardRequests)
             {
                 cardRequest.PinLocation = 0;
@@ -146,7 +148,8 @@ namespace TDU.CMS2.Views
 
         public void FilterByDate(DateTime filterDate)
         {
-            CardRequests = DbContext.CardRequests.Where(request => request.RequestDate.Date.Equals(filterDate.Date)).ToList();
+            CardRequests =
+                DbContext.CardRequests.Where(request => request.RequestDate.Date.Equals(filterDate.Date)).ToList();
             Reload();
         }
 
@@ -162,20 +165,21 @@ namespace TDU.CMS2.Views
             }
             if (cardSend)
             {
-                SetSelectedRowCellValue("CardLocation","DevideValue");
+                SetSelectedRowCellValue("CardLocation", "DevideValue");
             }
             if (pinSend)
             {
                 SetSelectedRowCellValue("PinLocation", "DevideValue");
             }
-            foreach(var i in rowHandlesToCheck)
+            foreach (var i in rowHandlesToCheck)
             {
-                //var pinLoc = gridView1.GetRowCellValue(i, "Pinlocation");
-                //var cardLoc = gridView1.GetRowCellValue(i, "Cardlocation");
-                //if (pinSend)
-                //{
-                    
-                //}
+                var pinLoc = gridView1.GetRowCellValue(i, "Pinlocation");
+                var cardLoc = gridView1.GetRowCellValue(i, "Cardlocation");
+                if ((long) pinLoc == 2 || (long) cardLoc == 2) continue;
+                gridView1.SetRowCellValue(i, "State",
+                    gridView1.GetRowCellValue(i, "DevideValue") == (object) DepartmentType.MainDept
+                        ? RequestState.InDept
+                        : RequestState.Devided);
             }
         }
 

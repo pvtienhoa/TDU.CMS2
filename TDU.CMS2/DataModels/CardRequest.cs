@@ -21,14 +21,14 @@ namespace TDU.CMS2.DataModels
 
     public enum RequestState
     {
-        Producing,
-        Received,
-        Devided,
-        InDept,
-        Taken,
-        Activated,
-        Destroyed,
-        Missing
+        Producing,       //Dang SX
+        Received,       //Da nhan the tu TW
+        Devided,       //Da chia the
+        InDept,       //Da nhan the sau chia
+        Taken,       //Da Giao Khach
+        Activated,  //Da Kich Hoat
+        Destroyed, //Da Huy
+        Missing   //Da Mat
     }
 
     public class CardRequest

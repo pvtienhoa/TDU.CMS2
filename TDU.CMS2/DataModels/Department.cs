@@ -10,6 +10,7 @@ namespace TDU.CMS2.DataModels
 {
     public enum DepartmentType{
         HeadOffice,
+        IT,
         MainDept,
         SubDept,
         Customer,
