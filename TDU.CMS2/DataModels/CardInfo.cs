@@ -22,5 +22,7 @@ namespace TDU.CMS2.DataModels
 
         public string CardHolder { get; set; }
 
+        public virtual ICollection<CardRequest> Requests { get; set; }
+
     }
 }
